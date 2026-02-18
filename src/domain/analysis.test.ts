@@ -6,11 +6,13 @@ import type { CountryDatasetRow } from "../types/contracts.js";
 const row = (
   iso3: string,
   distance_km_from_brno: number,
-  area_km2: number
+  area_km2: number,
+  population = 1_000_000
 ): CountryDatasetRow => ({
   iso3,
   name: iso3,
   continent: "Europe",
+  population,
   area_km2,
   distance_km_from_brno,
   point_source: "centroid",
@@ -44,5 +46,20 @@ describe("analyzeRows", () => {
     }
     expect(band.y_lower_km2).toBeGreaterThan(0);
     expect(band.y_upper_km2).toBeGreaterThan(band.y_lower_km2);
+  });
+
+  it("supports population-weighted regression", () => {
+    const rows = [
+      row("A", 100, 10, 1_000_000),
+      row("B", 200, 20, 1_000_000),
+      row("C", 300, 30, 1_000_000),
+      row("D", 300, 300, 1_400_000_000)
+    ];
+    const uniform = analyzeRows(rows, { regressionWeighting: "uniform" });
+    const weighted = analyzeRows(rows, { regressionWeighting: "population" });
+
+    expect(weighted.regression.weighting_mode).toBe("population");
+    expect(uniform.regression.weighting_mode).toBe("uniform");
+    expect(weighted.regression.slope).toBeGreaterThan(uniform.regression.slope);
   });
 });

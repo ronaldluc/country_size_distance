@@ -40,6 +40,14 @@
       "type": "boolean",
       "description": "When true, countries flagged as outliers are removed."
     },
+    "regression_weighting": {
+      "type": "string",
+      "description": "How the regression fit is weighted.",
+      "enum": [
+        "uniform",
+        "population"
+      ]
+    },
     "outlier_mode": {
       "type": "string",
       "description": "Optional outlier strategy selector.",

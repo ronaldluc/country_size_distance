@@ -12,6 +12,7 @@ const defaultFilterState: FilterState = {
   axis_mode: "linear",
   included_continents: [...CONTINENTS],
   exclude_outliers: false,
+  regression_weighting: "uniform",
   outlier_mode: "iqr"
 };
 
@@ -29,7 +30,13 @@ export const App = (): JSX.Element => {
     () => applyFilters(dataset.countries, filterState),
     [dataset.countries, filterState]
   );
-  const analysis = useMemo(() => analyzeRows(filteredRows), [filteredRows]);
+  const analysis = useMemo(
+    () =>
+      analyzeRows(filteredRows, {
+        regressionWeighting: filterState.regression_weighting ?? "uniform"
+      }),
+    [filteredRows, filterState.regression_weighting]
+  );
   const exportCsv = () => {
     const csv = rowsToCsv(filteredRows);
     downloadTextFile("countries_distance_area.filtered.csv", csv, "text/csv;charset=utf-8");

@@ -23,6 +23,7 @@ export interface CountryDatasetRow {
   iso3: string;
   name: string;
   continent: Continent;
+  population: number;
   area_km2: number;
   distance_km_from_brno: number;
   point_source: CountryPointSource;
@@ -41,11 +42,13 @@ export interface CountryDistanceAreaDataset {
 
 export type AxisMode = "linear" | "log";
 export type OutlierMode = "iqr" | "percentile";
+export type RegressionWeightingMode = "uniform" | "population";
 
 export interface FilterState {
   axis_mode: AxisMode;
   included_continents: Continent[];
   exclude_outliers: boolean;
+  regression_weighting?: RegressionWeightingMode;
   outlier_mode?: OutlierMode;
   outlier_percentile_threshold?: number;
   excluded_iso3?: string[];
@@ -54,6 +57,7 @@ export interface FilterState {
 
 export interface RegressionStats {
   model: "log_log_power_law";
+  weighting_mode: RegressionWeightingMode;
   slope: number;
   intercept: number;
   sigma_log: number;

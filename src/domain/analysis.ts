@@ -1,9 +1,11 @@
 import type {
   AnalysisResult,
   CountryDatasetRow,
+  RegressionWeightingMode,
   RegressionBandPoint,
   RegressionLinePoint
 } from "../types/contracts.js";
+import { populationToRegressionWeight } from "./populationScaling.js";
 
 const mean = (values: number[]): number => values.reduce((acc, v) => acc + v, 0) / values.length;
 
@@ -47,17 +49,20 @@ const rank = (values: number[]): number[] => {
 
 const linearRegression = (
   x: number[],
-  y: number[]
+  y: number[],
+  weights?: number[]
 ): { slope: number; intercept: number; r2: number; residuals: number[] } => {
-  const mx = mean(x);
-  const my = mean(y);
+  const w = weights && weights.length === x.length ? weights : x.map(() => 1);
+  const weightSum = w.reduce((acc, wi) => acc + wi, 0);
+  const mx = x.reduce((acc, xi, i) => acc + xi * w[i]!, 0) / weightSum;
+  const my = y.reduce((acc, yi, i) => acc + yi * w[i]!, 0) / weightSum;
   let numerator = 0;
   let denominator = 0;
 
   for (let i = 0; i < x.length; i += 1) {
     const dx = x[i]! - mx;
-    numerator += dx * (y[i]! - my);
-    denominator += dx * dx;
+    numerator += w[i]! * dx * (y[i]! - my);
+    denominator += w[i]! * dx * dx;
   }
 
   if (denominator === 0) {
@@ -69,8 +74,8 @@ const linearRegression = (
   const intercept = my - slope * mx;
   const yPred = x.map((xi) => slope * xi + intercept);
   const residuals = y.map((yi, i) => yi - yPred[i]!);
-  const ssRes = y.reduce((acc, yi, i) => acc + (yi - yPred[i]!) ** 2, 0);
-  const ssTot = y.reduce((acc, yi) => acc + (yi - my) ** 2, 0);
+  const ssRes = y.reduce((acc, yi, i) => acc + w[i]! * (yi - yPred[i]!) ** 2, 0);
+  const ssTot = y.reduce((acc, yi, i) => acc + w[i]! * (yi - my) ** 2, 0);
   const r2 = ssTot === 0 ? 0 : 1 - ssRes / ssTot;
   return { slope, intercept, r2: Math.max(0, Math.min(1, r2)), residuals };
 };
@@ -124,13 +129,26 @@ const buildRegressionBand = (
   return rows;
 };
 
-export const analyzeRows = (rows: CountryDatasetRow[]): AnalysisResult => {
+interface AnalysisOptions {
+  regressionWeighting?: RegressionWeightingMode;
+}
+
+export const analyzeRows = (rows: CountryDatasetRow[], options?: AnalysisOptions): AnalysisResult => {
+  const regressionWeighting = options?.regressionWeighting ?? "uniform";
+
   if (rows.length === 0) {
     return {
       sample_size: 0,
       pearson_r: 0,
       spearman_rho: 0,
-      regression: { model: "log_log_power_law", slope: 0, intercept: 0, sigma_log: 0, r_squared: 0 },
+      regression: {
+        model: "log_log_power_law",
+        weighting_mode: regressionWeighting,
+        slope: 0,
+        intercept: 0,
+        sigma_log: 0,
+        r_squared: 0
+      },
       x_domain_km: { min: 0, max: 0 },
       warnings: ["No countries match current filter settings."]
     };
@@ -142,7 +160,14 @@ export const analyzeRows = (rows: CountryDatasetRow[]): AnalysisResult => {
       sample_size: rows.length,
       pearson_r: 0,
       spearman_rho: 0,
-      regression: { model: "log_log_power_law", slope: 0, intercept: 0, sigma_log: 0, r_squared: 0 },
+      regression: {
+        model: "log_log_power_law",
+        weighting_mode: regressionWeighting,
+        slope: 0,
+        intercept: 0,
+        sigma_log: 0,
+        r_squared: 0
+      },
       x_domain_km: { min: 0, max: 0 },
       warnings: ["No positive values available for log-log regression."]
     };
@@ -156,10 +181,19 @@ export const analyzeRows = (rows: CountryDatasetRow[]): AnalysisResult => {
   const s = pearson(rank(x), rank(y));
   const logX = x.map((v) => Math.log(v));
   const logY = y.map((v) => Math.log(v));
-  const reg = linearRegression(logX, logY);
+  const rawWeights =
+    regressionWeighting === "population"
+      ? positiveRows.map((row) => populationToRegressionWeight(row.population))
+      : positiveRows.map(() => 1);
+  const weightMean = mean(rawWeights);
+  const normalizedWeights = rawWeights.map((w) => w / (weightMean || 1));
+
+  const reg = linearRegression(logX, logY, normalizedWeights);
 
   const dof = Math.max(1, logX.length - 2);
-  const sigmaLog = Math.sqrt(reg.residuals.reduce((acc, r) => acc + r ** 2, 0) / dof);
+  const sigmaLog = Math.sqrt(
+    reg.residuals.reduce((acc, residual, i) => acc + normalizedWeights[i]! * residual ** 2, 0) / dof
+  );
 
   const warnings: string[] = [];
   if (rows.length < 8) {
@@ -175,6 +209,7 @@ export const analyzeRows = (rows: CountryDatasetRow[]): AnalysisResult => {
     spearman_rho: s,
     regression: {
       model: "log_log_power_law",
+      weighting_mode: regressionWeighting,
       slope: reg.slope,
       intercept: reg.intercept,
       sigma_log: sigmaLog,

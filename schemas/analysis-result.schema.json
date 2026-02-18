@@ -31,6 +31,7 @@
       "type": "object",
       "required": [
         "model",
+        "weighting_mode",
         "slope",
         "intercept",
         "sigma_log",
@@ -41,6 +42,13 @@
         "model": {
           "type": "string",
           "const": "log_log_power_law"
+        },
+        "weighting_mode": {
+          "type": "string",
+          "enum": [
+            "uniform",
+            "population"
+          ]
         },
         "slope": {
           "type": "number"

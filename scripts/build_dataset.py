@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import math
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -38,6 +39,13 @@ def clean_iso3(row: gpd.GeoSeries) -> str | None:
 def compute_area_km2(geod: Geod, geometry: Polygon | MultiPolygon) -> float:
     area_m2, _ = geod.geometry_area_perimeter(geometry)
     return abs(area_m2) / 1_000_000.0
+
+
+def clean_population(row: gpd.GeoSeries) -> float:
+    value = row.get("POP_EST")
+    if isinstance(value, (int, float)) and math.isfinite(float(value)) and float(value) >= 0:
+        return float(value)
+    return 0.0
 
 
 def pick_capitals() -> dict[str, CapitalPoint]:
@@ -86,6 +94,7 @@ def build_dataset() -> dict:
             continue
 
         area_km2 = compute_area_km2(geod, geometry)
+        population = clean_population(row)
 
         point_source = "centroid"
         capital_name: str | None = None
@@ -111,6 +120,7 @@ def build_dataset() -> dict:
                 "iso3": iso3,
                 "name": str(row["NAME_LONG"]),
                 "continent": str(row["CONTINENT"]),
+                "population": round(population),
                 "area_km2": round(area_km2, 2),
                 "distance_km_from_brno": round(distance_m / 1000.0, 2),
                 "point_source": point_source,

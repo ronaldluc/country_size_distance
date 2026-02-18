@@ -5,6 +5,8 @@ interface Props {
 }
 
 const n = (value: number): string => value.toLocaleString(undefined, { maximumFractionDigits: 3 });
+const label = (value: string): string =>
+  value === "population" ? "Population-weighted" : "Uniform";
 
 export const StatsBar = ({ result }: Props): JSX.Element => (
   <section className="panel stats">
@@ -25,6 +27,10 @@ export const StatsBar = ({ result }: Props): JSX.Element => (
       <div>
         <span className="label">R squared</span>
         <strong>{n(result.regression.r_squared)}</strong>
+      </div>
+      <div>
+        <span className="label">Regression weighting</span>
+        <strong>{label(result.regression.weighting_mode)}</strong>
       </div>
       <div>
         <span className="label">Log-log slope (b)</span>

@@ -55,6 +55,7 @@
           "iso3",
           "name",
           "continent",
+          "population",
           "area_km2",
           "distance_km_from_brno",
           "point_source",
@@ -84,6 +85,10 @@
               "Seven seas (open ocean)",
               "South America"
             ]
+          },
+          "population": {
+            "type": "number",
+            "minimum": 0
           },
           "area_km2": {
             "type": "number",

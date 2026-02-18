@@ -7,11 +7,13 @@ const mkRow = (
   iso3: string,
   continent: CountryDatasetRow["continent"],
   area_km2: number,
-  distance_km_from_brno: number
+  distance_km_from_brno: number,
+  population = 1_000_000
 ): CountryDatasetRow => ({
   iso3,
   name: iso3,
   continent,
+  population,
   area_km2,
   distance_km_from_brno,
   point_source: "centroid",

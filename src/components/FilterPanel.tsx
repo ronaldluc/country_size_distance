@@ -87,6 +87,23 @@ export const FilterPanel = ({ filterState, countries, onChange, onReset }: Props
         </select>
       </div>
 
+      <div className="field-group">
+        <label htmlFor="regression_weighting">Regression weighting</label>
+        <select
+          id="regression_weighting"
+          value={filterState.regression_weighting ?? "uniform"}
+          onChange={(e) =>
+            onChange({
+              ...filterState,
+              regression_weighting: e.target.value as "uniform" | "population"
+            })
+          }
+        >
+          <option value="uniform">Uniform (equal country weight)</option>
+          <option value="population">Population-weighted (non-linear)</option>
+        </select>
+      </div>
+
       {filterState.outlier_mode === "percentile" && (
         <div className="field-group">
           <label htmlFor="outlier_percentile_threshold">
