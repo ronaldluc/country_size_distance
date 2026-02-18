@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/filter-state.schema.json",
+  "title": "Filter State",
+  "description": "Schema for frontend filter controls that drive chart updates.",
+  "type": "object",
+  "required": [
+    "axis_mode",
+    "included_continents",
+    "exclude_outliers"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "axis_mode": {
+      "type": "string",
+      "enum": [
+        "linear",
+        "log"
+      ]
+    },
+    "included_continents": {
+      "type": "array",
+      "description": "Continent allow-list. Empty means no continents selected.",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "Africa",
+          "Antarctica",
+          "Asia",
+          "Europe",
+          "North America",
+          "Oceania",
+          "Seven seas (open ocean)",
+          "South America"
+        ]
+      }
+    },
+    "exclude_outliers": {
+      "type": "boolean",
+      "description": "When true, countries flagged as outliers are removed."
+    },
+    "outlier_mode": {
+      "type": "string",
+      "description": "Optional outlier strategy selector.",
+      "enum": [
+        "iqr",
+        "percentile"
+      ]
+    },
+    "outlier_percentile_threshold": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Used only when outlier_mode=percentile."
+    },
+    "excluded_iso3": {
+      "type": "array",
+      "description": "Manual country exclusions by ISO3 code.",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z]{3}$"
+      }
+    },
+    "included_iso3": {
+      "type": "array",
+      "description": "Optional explicit include override; if set, only these are considered after other filters.",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z]{3}$"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "outlier_mode": {
+            "const": "percentile"
+          }
+        },
+        "required": [
+          "outlier_mode"
+        ]
+      },
+      "then": {
+        "properties": {
+          "outlier_percentile_threshold": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "required": [
+          "outlier_percentile_threshold"
+        ]
+      }
+    }
+  ]
+}

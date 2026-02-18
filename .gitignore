@@ -1,0 +1,12 @@
+.venv/
+node_modules/
+dist/
+.uv-cache/
+.npm-cache/
+*.pyc
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.playwright-cli/
+.DS_Store
+*.log

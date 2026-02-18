@@ -1,0 +1,1781 @@
+{
+  "generated_at": "2026-02-18T04:15:59.968173+00:00",
+  "generator_version": "0.1.0",
+  "brno_reference": {
+    "name": "Brno, Czechia",
+    "lat": 49.1951,
+    "lon": 16.6068
+  },
+  "countries": [
+    {
+      "iso3": "AFG",
+      "name": "Afghanistan",
+      "continent": "Asia",
+      "area_km2": 652270.07,
+      "distance_km_from_brno": 4376.7,
+      "point_source": "centroid",
+      "point_lat": 33.777481,
+      "point_lon": 66.046158
+    },
+    {
+      "iso3": "ALB",
+      "name": "Albania",
+      "continent": "Europe",
+      "area_km2": 29694.8,
+      "distance_km_from_brno": 935.76,
+      "point_source": "centroid",
+      "point_lat": 41.129125,
+      "point_lon": 20.033298
+    },
+    {
+      "iso3": "DZA",
+      "name": "Algeria",
+      "continent": "Africa",
+      "area_km2": 2315916.66,
+      "distance_km_from_brno": 2647.36,
+      "point_source": "centroid",
+      "point_lat": 27.932031,
+      "point_lon": 2.601286
+    },
+    {
+      "iso3": "AGO",
+      "name": "Angola",
+      "continent": "Africa",
+      "area_km2": 1245463.75,
+      "distance_km_from_brno": 6800.01,
+      "point_source": "centroid",
+      "point_lat": -12.190453,
+      "point_lon": 17.467967
+    },
+    {
+      "iso3": "ATA",
+      "name": "Antarctica",
+      "continent": "Antarctica",
+      "area_km2": 12335956.08,
+      "distance_km_from_brno": 13904.65,
+      "point_source": "centroid",
+      "point_lat": -75.505229,
+      "point_lon": 35.643461
+    },
+    {
+      "iso3": "ARG",
+      "name": "Argentina",
+      "continent": "South America",
+      "area_km2": 2784468.59,
+      "distance_km_from_brno": 12253.33,
+      "point_source": "centroid",
+      "point_lat": -34.354498,
+      "point_lon": -64.957299
+    },
+    {
+      "iso3": "ARM",
+      "name": "Armenia",
+      "continent": "Asia",
+      "area_km2": 28656.6,
+      "distance_km_from_brno": 2443.41,
+      "point_source": "centroid",
+      "point_lat": 40.208502,
+      "point_lon": 45.005153
+    },
+    {
+      "iso3": "AUS",
+      "name": "Australia",
+      "continent": "Oceania",
+      "area_km2": 7687613.84,
+      "distance_km_from_brno": 14090.63,
+      "point_source": "centroid",
+      "point_lat": -25.260544,
+      "point_lon": 134.401555
+    },
+    {
+      "iso3": "AUT",
+      "name": "Austria",
+      "continent": "Europe",
+      "area_km2": 85064.9,
+      "distance_km_from_brno": 258.14,
+      "point_source": "centroid",
+      "point_lat": 47.603415,
+      "point_lon": 14.068548
+    },
+    {
+      "iso3": "AZE",
+      "name": "Azerbaijan",
+      "continent": "Asia",
+      "area_km2": 91113.25,
+      "distance_km_from_brno": 2625.23,
+      "point_source": "centroid",
+      "point_lat": 40.20768,
+      "point_lon": 47.554534
+    },
+    {
+      "iso3": "BHS",
+      "name": "Bahamas",
+      "continent": "North America",
+      "area_km2": 15584.79,
+      "distance_km_from_brno": 8219.85,
+      "point_source": "centroid",
+      "point_lat": 25.501154,
+      "point_lon": -77.929422
+    },
+    {
+      "iso3": "BGD",
+      "name": "Bangladesh",
+      "continent": "Asia",
+      "area_km2": 133782.14,
+      "distance_km_from_brno": 6872.84,
+      "point_source": "centroid",
+      "point_lat": 23.824229,
+      "point_lon": 90.272059
+    },
+    {
+      "iso3": "BLR",
+      "name": "Belarus",
+      "continent": "Europe",
+      "area_km2": 208969.83,
+      "distance_km_from_brno": 921.91,
+      "point_source": "centroid",
+      "point_lat": 53.460239,
+      "point_lon": 27.972945
+    },
+    {
+      "iso3": "BEL",
+      "name": "Belgium",
+      "continent": "Europe",
+      "area_km2": 30126.04,
+      "distance_km_from_brno": 877.34,
+      "point_source": "centroid",
+      "point_lat": 50.646831,
+      "point_lon": 4.583857
+    },
+    {
+      "iso3": "BLZ",
+      "name": "Belize",
+      "continent": "North America",
+      "area_km2": 22045.45,
+      "distance_km_from_brno": 9645.64,
+      "point_source": "centroid",
+      "point_lat": 17.193777,
+      "point_lon": -88.703841
+    },
+    {
+      "iso3": "BEN",
+      "name": "Benin",
+      "continent": "Africa",
+      "area_km2": 116998.71,
+      "distance_km_from_brno": 4582.17,
+      "point_source": "centroid",
+      "point_lat": 9.637143,
+      "point_lon": 2.336876
+    },
+    {
+      "iso3": "BTN",
+      "name": "Bhutan",
+      "continent": "Asia",
+      "area_km2": 39377.4,
+      "distance_km_from_brno": 6611.15,
+      "point_source": "centroid",
+      "point_lat": 27.426171,
+      "point_lon": 90.472711
+    },
+    {
+      "iso3": "BOL",
+      "name": "Bolivia",
+      "continent": "South America",
+      "area_km2": 1085269.6,
+      "distance_km_from_brno": 10775.44,
+      "point_source": "centroid",
+      "point_lat": -16.662994,
+      "point_lon": -64.647387
+    },
+    {
+      "iso3": "BIH",
+      "name": "Bosnia and Herzegovina",
+      "continent": "Europe",
+      "area_km2": 50605.07,
+      "distance_km_from_brno": 566.04,
+      "point_source": "centroid",
+      "point_lat": 44.17191,
+      "point_lon": 17.820045
+    },
+    {
+      "iso3": "BWA",
+      "name": "Botswana",
+      "continent": "Africa",
+      "area_km2": 591912.02,
+      "distance_km_from_brno": 7923.1,
+      "point_source": "centroid",
+      "point_lat": -22.05322,
+      "point_lon": 23.777955
+    },
+    {
+      "iso3": "BRA",
+      "name": "Brazil",
+      "continent": "South America",
+      "area_km2": 8508557.09,
+      "distance_km_from_brno": 9451.91,
+      "point_source": "centroid",
+      "point_lat": -10.441406,
+      "point_lon": -53.115312
+    },
+    {
+      "iso3": "BRN",
+      "name": "Brunei Darussalam",
+      "continent": "Asia",
+      "area_km2": 10700.33,
+      "distance_km_from_brno": 10218.87,
+      "point_source": "centroid",
+      "point_lat": 4.690047,
+      "point_lon": 114.915038
+    },
+    {
+      "iso3": "BGR",
+      "name": "Bulgaria",
+      "continent": "Europe",
+      "area_km2": 110216.88,
+      "distance_km_from_brno": 977.22,
+      "point_source": "centroid",
+      "point_lat": 42.74105,
+      "point_lon": 25.191589
+    },
+    {
+      "iso3": "BFA",
+      "name": "Burkina Faso",
+      "continent": "Africa",
+      "area_km2": 271593.67,
+      "distance_km_from_brno": 4427.19,
+      "point_source": "centroid",
+      "point_lat": 12.303643,
+      "point_lon": -1.779704
+    },
+    {
+      "iso3": "BDI",
+      "name": "Burundi",
+      "continent": "Africa",
+      "area_km2": 26238.95,
+      "distance_km_from_brno": 5965.07,
+      "point_source": "centroid",
+      "point_lat": -3.376985,
+      "point_lon": 29.913963
+    },
+    {
+      "iso3": "KHM",
+      "name": "Cambodia",
+      "continent": "Asia",
+      "area_km2": 182235.98,
+      "distance_km_from_brno": 8827.84,
+      "point_source": "centroid",
+      "point_lat": 12.679264,
+      "point_lon": 104.875278
+    },
+    {
+      "iso3": "CMR",
+      "name": "Cameroon",
+      "continent": "Africa",
+      "area_km2": 460324.7,
+      "distance_km_from_brno": 4841.64,
+      "point_source": "centroid",
+      "point_lat": 5.646706,
+      "point_lon": 12.60869
+    },
+    {
+      "iso3": "CAN",
+      "name": "Canada",
+      "continent": "North America",
+      "area_km2": 10036042.98,
+      "distance_km_from_brno": 6725.44,
+      "point_source": "centroid",
+      "point_lat": 57.629665,
+      "point_lon": -97.64486
+    },
+    {
+      "iso3": "CAF",
+      "name": "Central African Republic",
+      "continent": "Africa",
+      "area_km2": 621860.35,
+      "distance_km_from_brno": 4741.97,
+      "point_source": "centroid",
+      "point_lat": 6.534679,
+      "point_lon": 20.371028
+    },
+    {
+      "iso3": "TCD",
+      "name": "Chad",
+      "continent": "Africa",
+      "area_km2": 1271694.6,
+      "distance_km_from_brno": 3771.81,
+      "point_source": "centroid",
+      "point_lat": 15.224169,
+      "point_lon": 18.577017
+    },
+    {
+      "iso3": "CHL",
+      "name": "Chile",
+      "continent": "South America",
+      "area_km2": 814844.22,
+      "distance_km_from_brno": 12833.17,
+      "point_source": "centroid",
+      "point_lat": -36.501556,
+      "point_lon": -71.358552
+    },
+    {
+      "iso3": "CHN",
+      "name": "China",
+      "continent": "Asia",
+      "area_km2": 9409830.49,
+      "distance_km_from_brno": 6920.66,
+      "point_source": "centroid",
+      "point_lat": 35.591607,
+      "point_lon": 103.632022
+    },
+    {
+      "iso3": "COL",
+      "name": "Colombia",
+      "continent": "South America",
+      "area_km2": 1151882.93,
+      "distance_km_from_brno": 9659.6,
+      "point_source": "centroid",
+      "point_lat": 3.90678,
+      "point_lon": -73.075588
+    },
+    {
+      "iso3": "CRI",
+      "name": "Costa Rica",
+      "continent": "North America",
+      "area_km2": 53832.14,
+      "distance_km_from_brno": 9949.52,
+      "point_source": "centroid",
+      "point_lat": 9.963677,
+      "point_lon": -84.174309
+    },
+    {
+      "iso3": "HRV",
+      "name": "Croatia",
+      "continent": "Europe",
+      "area_km2": 57530.85,
+      "distance_km_from_brno": 466.93,
+      "point_source": "centroid",
+      "point_lat": 44.995169,
+      "point_lon": 16.566016
+    },
+    {
+      "iso3": "CUB",
+      "name": "Cuba",
+      "continent": "North America",
+      "area_km2": 114866.22,
+      "distance_km_from_brno": 8607.43,
+      "point_source": "centroid",
+      "point_lat": 21.62282,
+      "point_lon": -78.946641
+    },
+    {
+      "iso3": "CYP",
+      "name": "Cyprus",
+      "continent": "Asia",
+      "area_km2": 6207.01,
+      "distance_km_from_brno": 2081.01,
+      "point_source": "centroid",
+      "point_lat": 34.906691,
+      "point_lon": 33.03957
+    },
+    {
+      "iso3": "CZE",
+      "name": "Czech Republic",
+      "continent": "Europe",
+      "area_km2": 81207.6,
+      "distance_km_from_brno": 111.67,
+      "point_source": "centroid",
+      "point_lat": 49.765605,
+      "point_lon": 15.338599
+    },
+    {
+      "iso3": "CIV",
+      "name": "C\u00f4te d'Ivoire",
+      "continent": "Africa",
+      "area_km2": 329825.95,
+      "distance_km_from_brno": 5063.83,
+      "point_source": "centroid",
+      "point_lat": 7.54628,
+      "point_lon": -5.612034
+    },
+    {
+      "iso3": "PRK",
+      "name": "Dem. Rep. Korea",
+      "continent": "Asia",
+      "area_km2": 125679.22,
+      "distance_km_from_brno": 8005.42,
+      "point_source": "centroid",
+      "point_lat": 40.109546,
+      "point_lon": 127.148192
+    },
+    {
+      "iso3": "COD",
+      "name": "Democratic Republic of the Congo",
+      "continent": "Africa",
+      "area_km2": 2323492.48,
+      "distance_km_from_brno": 5802.87,
+      "point_source": "centroid",
+      "point_lat": -2.824792,
+      "point_lon": 23.579521
+    },
+    {
+      "iso3": "DNK",
+      "name": "Denmark",
+      "continent": "Europe",
+      "area_km2": 42759.93,
+      "distance_km_from_brno": 887.11,
+      "point_source": "centroid",
+      "point_lat": 56.045961,
+      "point_lon": 9.881428
+    },
+    {
+      "iso3": "DJI",
+      "name": "Djibouti",
+      "continent": "Africa",
+      "area_km2": 21880.25,
+      "distance_km_from_brno": 4786.52,
+      "point_source": "centroid",
+      "point_lat": 11.772053,
+      "point_lon": 42.497799
+    },
+    {
+      "iso3": "DOM",
+      "name": "Dominican Republic",
+      "continent": "North America",
+      "area_km2": 48157.87,
+      "distance_km_from_brno": 8233.36,
+      "point_source": "centroid",
+      "point_lat": 18.882487,
+      "point_lon": -70.462164
+    },
+    {
+      "iso3": "ECU",
+      "name": "Ecuador",
+      "continent": "South America",
+      "area_km2": 250747.11,
+      "distance_km_from_brno": 10494.24,
+      "point_source": "centroid",
+      "point_lat": -1.453356,
+      "point_lon": -78.383874
+    },
+    {
+      "iso3": "EGY",
+      "name": "Egypt",
+      "continent": "Africa",
+      "area_km2": 996311.62,
+      "distance_km_from_brno": 2775.58,
+      "point_source": "centroid",
+      "point_lat": 26.409961,
+      "point_lon": 29.852618
+    },
+    {
+      "iso3": "SLV",
+      "name": "El Salvador",
+      "continent": "North America",
+      "area_km2": 20893.34,
+      "distance_km_from_brno": 9954.76,
+      "point_source": "centroid",
+      "point_lat": 13.725589,
+      "point_lon": -88.872571
+    },
+    {
+      "iso3": "GNQ",
+      "name": "Equatorial Guinea",
+      "continent": "Africa",
+      "area_km2": 27120.57,
+      "distance_km_from_brno": 5302.92,
+      "point_source": "centroid",
+      "point_lat": 1.645774,
+      "point_lon": 10.36603
+    },
+    {
+      "iso3": "ERI",
+      "name": "Eritrea",
+      "continent": "Africa",
+      "area_km2": 119319.58,
+      "distance_km_from_brno": 4249.59,
+      "point_source": "centroid",
+      "point_lat": 15.41812,
+      "point_lon": 38.683289
+    },
+    {
+      "iso3": "EST",
+      "name": "Estonia",
+      "continent": "Europe",
+      "area_km2": 44678.2,
+      "distance_km_from_brno": 1210.07,
+      "point_source": "centroid",
+      "point_lat": 58.631767,
+      "point_lon": 25.827496
+    },
+    {
+      "iso3": "ETH",
+      "name": "Ethiopia",
+      "continent": "Africa",
+      "area_km2": 1132393.17,
+      "distance_km_from_brno": 4980.96,
+      "point_source": "centroid",
+      "point_lat": 8.624234,
+      "point_lon": 39.556185
+    },
+    {
+      "iso3": "FLK",
+      "name": "Falkland Islands / Malvinas",
+      "continent": "South America",
+      "area_km2": 16363.8,
+      "distance_km_from_brno": 13291.59,
+      "point_source": "centroid",
+      "point_lat": -51.711158,
+      "point_lon": -59.419534
+    },
+    {
+      "iso3": "FJI",
+      "name": "Fiji",
+      "continent": "Oceania",
+      "area_km2": 19289.97,
+      "distance_km_from_brno": 15405.99,
+      "point_source": "centroid",
+      "point_lat": -17.312775,
+      "point_lon": 163.776407
+    },
+    {
+      "iso3": "FIN",
+      "name": "Finland",
+      "continent": "Europe",
+      "area_km2": 341242.34,
+      "distance_km_from_brno": 1757.61,
+      "point_source": "centroid",
+      "point_lat": 64.116402,
+      "point_lon": 26.179175
+    },
+    {
+      "iso3": "FRA",
+      "name": "France",
+      "continent": "Europe",
+      "area_km2": 644847.88,
+      "distance_km_from_brno": 2005.09,
+      "point_source": "centroid",
+      "point_lat": 39.633011,
+      "point_lon": -4.902555
+    },
+    {
+      "iso3": "ATF",
+      "name": "French Southern and Antarctic Lands",
+      "continent": "Seven seas (open ocean)",
+      "area_km2": 11602.57,
+      "distance_km_from_brno": 12032.11,
+      "point_source": "centroid",
+      "point_lat": -49.304426,
+      "point_lon": 69.53124
+    },
+    {
+      "iso3": "GAB",
+      "name": "Gabon",
+      "continent": "Africa",
+      "area_km2": 269475.8,
+      "distance_km_from_brno": 5542.99,
+      "point_source": "centroid",
+      "point_lat": -0.646492,
+      "point_lon": 11.687818
+    },
+    {
+      "iso3": "GEO",
+      "name": "Georgia",
+      "continent": "Asia",
+      "area_km2": 69048.16,
+      "distance_km_from_brno": 2221.63,
+      "point_source": "centroid",
+      "point_lat": 42.153967,
+      "point_lon": 43.490247
+    },
+    {
+      "iso3": "DEU",
+      "name": "Germany",
+      "continent": "Europe",
+      "area_km2": 357430.34,
+      "distance_km_from_brno": 495.93,
+      "point_source": "centroid",
+      "point_lat": 51.021681,
+      "point_lon": 10.279254
+    },
+    {
+      "iso3": "GHA",
+      "name": "Ghana",
+      "continent": "Africa",
+      "area_km2": 243473.12,
+      "distance_km_from_brno": 4870.76,
+      "point_source": "centroid",
+      "point_lat": 7.918278,
+      "point_lon": -1.237022
+    },
+    {
+      "iso3": "GRC",
+      "name": "Greece",
+      "continent": "Europe",
+      "area_km2": 131964.65,
+      "distance_km_from_brno": 1232.06,
+      "point_source": "centroid",
+      "point_lat": 39.009319,
+      "point_lon": 22.719656
+    },
+    {
+      "iso3": "GRL",
+      "name": "Greenland",
+      "continent": "North America",
+      "area_km2": 2206644.44,
+      "distance_km_from_brno": 3827.49,
+      "point_source": "centroid",
+      "point_lat": 72.045858,
+      "point_lon": -41.712251
+    },
+    {
+      "iso3": "GTM",
+      "name": "Guatemala",
+      "continent": "North America",
+      "area_km2": 109459.05,
+      "distance_km_from_brno": 9886.86,
+      "point_source": "centroid",
+      "point_lat": 15.691167,
+      "point_lon": -90.370627
+    },
+    {
+      "iso3": "GIN",
+      "name": "Guinea",
+      "continent": "Africa",
+      "area_km2": 239565.08,
+      "distance_km_from_brno": 5002.03,
+      "point_source": "centroid",
+      "point_lat": 10.442272,
+      "point_lon": -11.05813
+    },
+    {
+      "iso3": "GNB",
+      "name": "Guinea-Bissau",
+      "continent": "Africa",
+      "area_km2": 36191.89,
+      "distance_km_from_brno": 5049.17,
+      "point_source": "centroid",
+      "point_lat": 12.022019,
+      "point_lon": -15.11067
+    },
+    {
+      "iso3": "GUY",
+      "name": "Guyana",
+      "continent": "South America",
+      "area_km2": 209801.86,
+      "distance_km_from_brno": 8560.71,
+      "point_source": "centroid",
+      "point_lat": 4.783167,
+      "point_lon": -58.970146
+    },
+    {
+      "iso3": "HTI",
+      "name": "Haiti",
+      "continent": "North America",
+      "area_km2": 28540.55,
+      "distance_km_from_brno": 8389.05,
+      "point_source": "centroid",
+      "point_lat": 18.898022,
+      "point_lon": -72.658845
+    },
+    {
+      "iso3": "HND",
+      "name": "Honduras",
+      "continent": "North America",
+      "area_km2": 113789.77,
+      "distance_km_from_brno": 9705.03,
+      "point_source": "centroid",
+      "point_lat": 14.820212,
+      "point_lon": -86.591185
+    },
+    {
+      "iso3": "HUN",
+      "name": "Hungary",
+      "continent": "Europe",
+      "area_km2": 92476.46,
+      "distance_km_from_brno": 302.28,
+      "point_source": "centroid",
+      "point_lat": 47.188397,
+      "point_lon": 19.350481
+    },
+    {
+      "iso3": "ISL",
+      "name": "Iceland",
+      "continent": "Europe",
+      "area_km2": 107735.72,
+      "distance_km_from_brno": 2713.86,
+      "point_source": "centroid",
+      "point_lat": 65.044687,
+      "point_lon": -18.762288
+    },
+    {
+      "iso3": "IND",
+      "name": "India",
+      "continent": "Asia",
+      "area_km2": 3142892.1,
+      "distance_km_from_brno": 6188.48,
+      "point_source": "centroid",
+      "point_lat": 22.609142,
+      "point_lon": 79.573565
+    },
+    {
+      "iso3": "IDN",
+      "name": "Indonesia",
+      "continent": "Asia",
+      "area_km2": 1819251.33,
+      "distance_km_from_brno": 10980.0,
+      "point_source": "centroid",
+      "point_lat": -2.209931,
+      "point_lon": 117.415346
+    },
+    {
+      "iso3": "IRN",
+      "name": "Iran",
+      "continent": "Asia",
+      "area_km2": 1617559.04,
+      "distance_km_from_brno": 3643.42,
+      "point_source": "centroid",
+      "point_lat": 32.330342,
+      "point_lon": 54.366892
+    },
+    {
+      "iso3": "IRQ",
+      "name": "Iraq",
+      "continent": "Asia",
+      "area_km2": 436965.03,
+      "distance_km_from_brno": 2881.17,
+      "point_source": "centroid",
+      "point_lat": 32.967376,
+      "point_lon": 43.771599
+    },
+    {
+      "iso3": "IRL",
+      "name": "Ireland",
+      "continent": "Europe",
+      "area_km2": 58457.51,
+      "distance_km_from_brno": 1767.49,
+      "point_source": "centroid",
+      "point_lat": 53.159022,
+      "point_lon": -8.012274
+    },
+    {
+      "iso3": "ISR",
+      "name": "Israel",
+      "continent": "Asia",
+      "area_km2": 22991.17,
+      "distance_km_from_brno": 2499.36,
+      "point_source": "centroid",
+      "point_lat": 31.46948,
+      "point_lon": 35.001892
+    },
+    {
+      "iso3": "ITA",
+      "name": "Italy",
+      "continent": "Europe",
+      "area_km2": 315104.85,
+      "distance_km_from_brno": 810.24,
+      "point_source": "centroid",
+      "point_lat": 42.582213,
+      "point_lon": 12.203307
+    },
+    {
+      "iso3": "JAM",
+      "name": "Jamaica",
+      "continent": "North America",
+      "area_km2": 12460.59,
+      "distance_km_from_brno": 8781.95,
+      "point_source": "centroid",
+      "point_lat": 18.137341,
+      "point_lon": -77.324114
+    },
+    {
+      "iso3": "JPN",
+      "name": "Japan",
+      "continent": "Asia",
+      "area_km2": 404619.93,
+      "distance_km_from_brno": 8812.73,
+      "point_source": "centroid",
+      "point_lat": 37.37852,
+      "point_lon": 137.888973
+    },
+    {
+      "iso3": "JOR",
+      "name": "Jordan",
+      "continent": "Asia",
+      "area_km2": 89207.14,
+      "distance_km_from_brno": 2614.92,
+      "point_source": "centroid",
+      "point_lat": 31.2287,
+      "point_lon": 36.772551
+    },
+    {
+      "iso3": "KAZ",
+      "name": "Kazakhstan",
+      "continent": "Asia",
+      "area_km2": 2729810.51,
+      "distance_km_from_brno": 3670.62,
+      "point_source": "centroid",
+      "point_lat": 47.920842,
+      "point_lon": 67.25429
+    },
+    {
+      "iso3": "KEN",
+      "name": "Kenya",
+      "continent": "Africa",
+      "area_km2": 590836.91,
+      "distance_km_from_brno": 5754.0,
+      "point_source": "centroid",
+      "point_lat": 0.594817,
+      "point_lon": 37.791729
+    },
+    {
+      "iso3": "SWZ",
+      "name": "Kingdom of eSwatini",
+      "continent": "Africa",
+      "area_km2": 18118.63,
+      "distance_km_from_brno": 8510.18,
+      "point_source": "centroid",
+      "point_lat": -26.487784,
+      "point_lon": 31.395214
+    },
+    {
+      "iso3": "KOS",
+      "name": "Kosovo",
+      "continent": "Europe",
+      "area_km2": 11230.26,
+      "distance_km_from_brno": 807.03,
+      "point_source": "centroid",
+      "point_lat": 42.577425,
+      "point_lon": 20.895366
+    },
+    {
+      "iso3": "KWT",
+      "name": "Kuwait",
+      "continent": "Asia",
+      "area_km2": 16652.12,
+      "distance_km_from_brno": 3427.16,
+      "point_source": "centroid",
+      "point_lat": 29.305084,
+      "point_lon": 47.600686
+    },
+    {
+      "iso3": "KGZ",
+      "name": "Kyrgyzstan",
+      "continent": "Asia",
+      "area_km2": 195874.66,
+      "distance_km_from_brno": 4511.12,
+      "point_source": "centroid",
+      "point_lat": 41.485184,
+      "point_lon": 74.604455
+    },
+    {
+      "iso3": "LAO",
+      "name": "Lao PDR",
+      "continent": "Asia",
+      "area_km2": 229080.42,
+      "distance_km_from_brno": 8278.51,
+      "point_source": "centroid",
+      "point_lat": 18.408384,
+      "point_lon": 103.768374
+    },
+    {
+      "iso3": "LVA",
+      "name": "Latvia",
+      "continent": "Europe",
+      "area_km2": 63923.53,
+      "distance_km_from_brno": 1009.0,
+      "point_source": "centroid",
+      "point_lat": 56.797858,
+      "point_lon": 24.837364
+    },
+    {
+      "iso3": "LBN",
+      "name": "Lebanon",
+      "continent": "Asia",
+      "area_km2": 10099.0,
+      "distance_km_from_brno": 2324.38,
+      "point_source": "centroid",
+      "point_lat": 33.908939,
+      "point_lon": 35.869931
+    },
+    {
+      "iso3": "LSO",
+      "name": "Lesotho",
+      "continent": "Africa",
+      "area_km2": 27505.65,
+      "distance_km_from_brno": 8804.91,
+      "point_source": "centroid",
+      "point_lat": -29.622301,
+      "point_lon": 28.171027
+    },
+    {
+      "iso3": "LBR",
+      "name": "Liberia",
+      "continent": "Africa",
+      "area_km2": 98206.78,
+      "distance_km_from_brno": 5333.01,
+      "point_source": "centroid",
+      "point_lat": 6.428939,
+      "point_lon": -9.409833
+    },
+    {
+      "iso3": "LBY",
+      "name": "Libya",
+      "continent": "Africa",
+      "area_km2": 1633720.72,
+      "distance_km_from_brno": 2480.43,
+      "point_source": "centroid",
+      "point_lat": 26.875278,
+      "point_lon": 18.001829
+    },
+    {
+      "iso3": "LTU",
+      "name": "Lithuania",
+      "continent": "Europe",
+      "area_km2": 63831.09,
+      "distance_km_from_brno": 838.23,
+      "point_source": "centroid",
+      "point_lat": 55.270435,
+      "point_lon": 23.884619
+    },
+    {
+      "iso3": "LUX",
+      "name": "Luxembourg",
+      "continent": "Europe",
+      "area_km2": 2416.87,
+      "distance_km_from_brno": 773.09,
+      "point_source": "centroid",
+      "point_lat": 49.7647,
+      "point_lon": 5.965258
+    },
+    {
+      "iso3": "MDG",
+      "name": "Madagascar",
+      "continent": "Africa",
+      "area_km2": 589382.83,
+      "distance_km_from_brno": 8146.9,
+      "point_source": "centroid",
+      "point_lat": -19.264104,
+      "point_lon": 46.709712
+    },
+    {
+      "iso3": "MWI",
+      "name": "Malawi",
+      "continent": "Africa",
+      "area_km2": 111197.02,
+      "distance_km_from_brno": 7119.36,
+      "point_source": "centroid",
+      "point_lat": -13.152013,
+      "point_lon": 34.190129
+    },
+    {
+      "iso3": "MYS",
+      "name": "Malaysia",
+      "continent": "Asia",
+      "area_km2": 338226.49,
+      "distance_km_from_brno": 9922.95,
+      "point_source": "centroid",
+      "point_lat": 3.721808,
+      "point_lon": 109.69755
+    },
+    {
+      "iso3": "MLI",
+      "name": "Mali",
+      "continent": "Africa",
+      "area_km2": 1235561.37,
+      "distance_km_from_brno": 3991.39,
+      "point_source": "centroid",
+      "point_lat": 17.172053,
+      "point_lon": -3.568489
+    },
+    {
+      "iso3": "MRT",
+      "name": "Mauritania",
+      "continent": "Africa",
+      "area_km2": 1054107.19,
+      "distance_km_from_brno": 4017.66,
+      "point_source": "centroid",
+      "point_lat": 20.124395,
+      "point_lon": -10.339151
+    },
+    {
+      "iso3": "MEX",
+      "name": "Mexico",
+      "continent": "North America",
+      "area_km2": 1969480.31,
+      "distance_km_from_brno": 9936.04,
+      "point_source": "centroid",
+      "point_lat": 23.700447,
+      "point_lon": -102.401717
+    },
+    {
+      "iso3": "MDA",
+      "name": "Moldova",
+      "continent": "Europe",
+      "area_km2": 32320.39,
+      "distance_km_from_brno": 904.73,
+      "point_source": "centroid",
+      "point_lat": 47.189888,
+      "point_lon": 28.414956
+    },
+    {
+      "iso3": "MNG",
+      "name": "Mongolia",
+      "continent": "Asia",
+      "area_km2": 1544322.15,
+      "distance_km_from_brno": 6090.34,
+      "point_source": "centroid",
+      "point_lat": 46.690546,
+      "point_lon": 102.982495
+    },
+    {
+      "iso3": "MNE",
+      "name": "Montenegro",
+      "continent": "Europe",
+      "area_km2": 13443.68,
+      "distance_km_from_brno": 741.84,
+      "point_source": "centroid",
+      "point_lat": 42.786337,
+      "point_lon": 19.285948
+    },
+    {
+      "iso3": "MAR",
+      "name": "Morocco",
+      "continent": "Africa",
+      "area_km2": 591718.99,
+      "distance_km_from_brno": 3035.83,
+      "point_source": "centroid",
+      "point_lat": 29.681753,
+      "point_lon": -8.55406
+    },
+    {
+      "iso3": "MOZ",
+      "name": "Mozambique",
+      "continent": "Africa",
+      "area_km2": 810994.76,
+      "distance_km_from_brno": 7576.57,
+      "point_source": "centroid",
+      "point_lat": -17.097677,
+      "point_lon": 35.50658
+    },
+    {
+      "iso3": "MMR",
+      "name": "Myanmar",
+      "continent": "Asia",
+      "area_km2": 679573.99,
+      "distance_km_from_brno": 7555.47,
+      "point_source": "centroid",
+      "point_lat": 20.894845,
+      "point_lon": 96.509248
+    },
+    {
+      "iso3": "NAM",
+      "name": "Namibia",
+      "continent": "Africa",
+      "area_km2": 824886.56,
+      "distance_km_from_brno": 7883.89,
+      "point_source": "centroid",
+      "point_lat": -21.987197,
+      "point_lon": 17.149408
+    },
+    {
+      "iso3": "NPL",
+      "name": "Nepal",
+      "continent": "Asia",
+      "area_km2": 150706.87,
+      "distance_km_from_brno": 6083.8,
+      "point_source": "centroid",
+      "point_lat": 28.227231,
+      "point_lon": 84.028181
+    },
+    {
+      "iso3": "NLD",
+      "name": "Netherlands",
+      "continent": "Europe",
+      "area_km2": 40024.1,
+      "distance_km_from_brno": 854.38,
+      "point_source": "centroid",
+      "point_lat": 52.285221,
+      "point_lon": 5.50824
+    },
+    {
+      "iso3": "NCL",
+      "name": "New Caledonia",
+      "continent": "Oceania",
+      "area_km2": 23219.01,
+      "distance_km_from_brno": 15872.71,
+      "point_source": "centroid",
+      "point_lat": -21.257941,
+      "point_lon": 165.531922
+    },
+    {
+      "iso3": "NZL",
+      "name": "New Zealand",
+      "continent": "Oceania",
+      "area_km2": 277627.6,
+      "distance_km_from_brno": 17974.36,
+      "point_source": "centroid",
+      "point_lat": -41.44014,
+      "point_lon": 172.824408
+    },
+    {
+      "iso3": "NIC",
+      "name": "Nicaragua",
+      "continent": "North America",
+      "area_km2": 129540.21,
+      "distance_km_from_brno": 9764.69,
+      "point_source": "centroid",
+      "point_lat": 12.842526,
+      "point_lon": -85.021044
+    },
+    {
+      "iso3": "NER",
+      "name": "Niger",
+      "continent": "Africa",
+      "area_km2": 1182269.65,
+      "distance_km_from_brno": 3600.5,
+      "point_source": "centroid",
+      "point_lat": 17.284954,
+      "point_lon": 9.299609
+    },
+    {
+      "iso3": "NGA",
+      "name": "Nigeria",
+      "continent": "Africa",
+      "area_km2": 905071.74,
+      "distance_km_from_brno": 4470.5,
+      "point_source": "centroid",
+      "point_lat": 9.52591,
+      "point_lon": 7.990644
+    },
+    {
+      "iso3": "MKD",
+      "name": "North Macedonia",
+      "continent": "Europe",
+      "area_km2": 25062.26,
+      "distance_km_from_brno": 932.63,
+      "point_source": "centroid",
+      "point_lat": 41.603055,
+      "point_lon": 21.697077
+    },
+    {
+      "iso3": "CYN",
+      "name": "Northern Cyprus",
+      "continent": "Asia",
+      "area_km2": 3786.36,
+      "distance_km_from_brno": 2075.84,
+      "point_source": "centroid",
+      "point_lat": 35.273675,
+      "point_lon": 33.55811
+    },
+    {
+      "iso3": "NOR",
+      "name": "Norway",
+      "continent": "Europe",
+      "area_km2": 397994.63,
+      "distance_km_from_brno": 1836.77,
+      "point_source": "centroid",
+      "point_lat": 65.635058,
+      "point_lon": 14.074258
+    },
+    {
+      "iso3": "OMN",
+      "name": "Oman",
+      "continent": "Asia",
+      "area_km2": 309302.03,
+      "distance_km_from_brno": 4717.94,
+      "point_source": "centroid",
+      "point_lat": 20.569636,
+      "point_lon": 56.084176
+    },
+    {
+      "iso3": "PAK",
+      "name": "Pakistan",
+      "continent": "Asia",
+      "area_km2": 874120.0,
+      "distance_km_from_brno": 4897.27,
+      "point_source": "centroid",
+      "point_lat": 29.806856,
+      "point_lon": 69.325487
+    },
+    {
+      "iso3": "PSE",
+      "name": "Palestine",
+      "continent": "Asia",
+      "area_km2": 5037.1,
+      "distance_km_from_brno": 2469.85,
+      "point_source": "centroid",
+      "point_lat": 31.939674,
+      "point_lon": 35.273214
+    },
+    {
+      "iso3": "PAN",
+      "name": "Panama",
+      "continent": "North America",
+      "area_km2": 75265.45,
+      "distance_km_from_brno": 9781.61,
+      "point_source": "centroid",
+      "point_lat": 8.528901,
+      "point_lon": -80.108995
+    },
+    {
+      "iso3": "PNG",
+      "name": "Papua New Guinea",
+      "continent": "Oceania",
+      "area_km2": 464520.07,
+      "distance_km_from_brno": 13281.98,
+      "point_source": "centroid",
+      "point_lat": -6.442153,
+      "point_lon": 145.315787
+    },
+    {
+      "iso3": "PRY",
+      "name": "Paraguay",
+      "continent": "South America",
+      "area_km2": 401335.92,
+      "distance_km_from_brno": 10905.34,
+      "point_source": "centroid",
+      "point_lat": -23.200128,
+      "point_lon": -58.40872
+    },
+    {
+      "iso3": "PER",
+      "name": "Peru",
+      "continent": "South America",
+      "area_km2": 1309699.64,
+      "distance_km_from_brno": 10842.97,
+      "point_source": "centroid",
+      "point_lat": -9.109778,
+      "point_lon": -74.410675
+    },
+    {
+      "iso3": "PHL",
+      "name": "Philippines",
+      "continent": "Asia",
+      "area_km2": 292256.94,
+      "distance_km_from_brno": 10186.91,
+      "point_source": "centroid",
+      "point_lat": 11.688342,
+      "point_lon": 122.919911
+    },
+    {
+      "iso3": "POL",
+      "name": "Poland",
+      "continent": "Europe",
+      "area_km2": 310402.33,
+      "distance_km_from_brno": 374.7,
+      "point_source": "centroid",
+      "point_lat": 52.086004,
+      "point_lon": 19.327036
+    },
+    {
+      "iso3": "PRT",
+      "name": "Portugal",
+      "continent": "Europe",
+      "area_km2": 93408.59,
+      "distance_km_from_brno": 2221.79,
+      "point_source": "centroid",
+      "point_lat": 39.591244,
+      "point_lon": -8.058424
+    },
+    {
+      "iso3": "PRI",
+      "name": "Puerto Rico",
+      "continent": "North America",
+      "area_km2": 9224.66,
+      "distance_km_from_brno": 7998.86,
+      "point_source": "centroid",
+      "point_lat": 18.237033,
+      "point_lon": -66.479213
+    },
+    {
+      "iso3": "QAT",
+      "name": "Qatar",
+      "continent": "Asia",
+      "area_km2": 11327.85,
+      "distance_km_from_brno": 3993.23,
+      "point_source": "centroid",
+      "point_lat": 25.320014,
+      "point_lon": 51.183432
+    },
+    {
+      "iso3": "KOR",
+      "name": "Republic of Korea",
+      "continent": "Asia",
+      "area_km2": 99044.37,
+      "distance_km_from_brno": 8359.5,
+      "point_source": "centroid",
+      "point_lat": 36.408103,
+      "point_lon": 127.820065
+    },
+    {
+      "iso3": "COG",
+      "name": "Republic of the Congo",
+      "continent": "Africa",
+      "area_km2": 339681.86,
+      "distance_km_from_brno": 5545.54,
+      "point_source": "centroid",
+      "point_lat": -0.835776,
+      "point_lon": 15.135211
+    },
+    {
+      "iso3": "ROU",
+      "name": "Romania",
+      "continent": "Europe",
+      "area_km2": 238356.3,
+      "distance_km_from_brno": 731.12,
+      "point_source": "centroid",
+      "point_lat": 45.823078,
+      "point_lon": 24.948719
+    },
+    {
+      "iso3": "RUS",
+      "name": "Russian Federation",
+      "continent": "Europe",
+      "area_km2": 17018507.41,
+      "distance_km_from_brno": 4931.57,
+      "point_source": "centroid",
+      "point_lat": 59.565608,
+      "point_lon": 95.431744
+    },
+    {
+      "iso3": "RWA",
+      "name": "Rwanda",
+      "continent": "Africa",
+      "area_km2": 23365.41,
+      "distance_km_from_brno": 5817.11,
+      "point_source": "centroid",
+      "point_lat": -2.013359,
+      "point_lon": 29.919018
+    },
+    {
+      "iso3": "SAU",
+      "name": "Saudi Arabia",
+      "continent": "Asia",
+      "area_km2": 1920324.15,
+      "distance_km_from_brno": 3712.83,
+      "point_source": "centroid",
+      "point_lat": 23.97189,
+      "point_lon": 44.579177
+    },
+    {
+      "iso3": "SEN",
+      "name": "Senegal",
+      "continent": "Africa",
+      "area_km2": 194390.44,
+      "distance_km_from_brno": 4792.97,
+      "point_source": "centroid",
+      "point_lat": 14.346288,
+      "point_lon": -14.507885
+    },
+    {
+      "iso3": "SRB",
+      "name": "Serbia",
+      "continent": "Europe",
+      "area_km2": 76388.61,
+      "distance_km_from_brno": 640.97,
+      "point_source": "centroid",
+      "point_lat": 44.211388,
+      "point_lon": 20.828267
+    },
+    {
+      "iso3": "SLE",
+      "name": "Sierra Leone",
+      "continent": "Africa",
+      "area_km2": 75980.33,
+      "distance_km_from_brno": 5228.02,
+      "point_source": "centroid",
+      "point_lat": 8.528058,
+      "point_lon": -11.795328
+    },
+    {
+      "iso3": "SVK",
+      "name": "Slovakia",
+      "continent": "Europe",
+      "area_km2": 47068.08,
+      "distance_km_from_brno": 218.46,
+      "point_source": "centroid",
+      "point_lat": 48.72201,
+      "point_lon": 19.502373
+    },
+    {
+      "iso3": "SVN",
+      "name": "Slovenia",
+      "continent": "Europe",
+      "area_km2": 19118.12,
+      "distance_km_from_brno": 363.92,
+      "point_source": "centroid",
+      "point_lat": 46.122439,
+      "point_lon": 14.936148
+    },
+    {
+      "iso3": "SLB",
+      "name": "Solomon Islands",
+      "continent": "Oceania",
+      "area_km2": 24728.11,
+      "distance_km_from_brno": 14390.85,
+      "point_source": "centroid",
+      "point_lat": -8.847355,
+      "point_lon": 159.962699
+    },
+    {
+      "iso3": "SOM",
+      "name": "Somalia",
+      "continent": "Africa",
+      "area_km2": 484332.79,
+      "distance_km_from_brno": 5642.24,
+      "point_source": "centroid",
+      "point_lat": 4.728226,
+      "point_lon": 45.713515
+    },
+    {
+      "iso3": "SOL",
+      "name": "Somaliland",
+      "continent": "Africa",
+      "area_km2": 167349.61,
+      "distance_km_from_brno": 5164.57,
+      "point_source": "centroid",
+      "point_lat": 9.755231,
+      "point_lon": 46.231099
+    },
+    {
+      "iso3": "ZAF",
+      "name": "South Africa",
+      "continent": "Africa",
+      "area_km2": 1216400.83,
+      "distance_km_from_brno": 8682.51,
+      "point_source": "centroid",
+      "point_lat": -28.826221,
+      "point_lon": 25.101642
+    },
+    {
+      "iso3": "SSD",
+      "name": "South Sudan",
+      "continent": "Africa",
+      "area_km2": 624909.1,
+      "distance_km_from_brno": 4817.9,
+      "point_source": "centroid",
+      "point_lat": 7.281781,
+      "point_lon": 30.200152
+    },
+    {
+      "iso3": "ESP",
+      "name": "Spain",
+      "continent": "Europe",
+      "area_km2": 502306.47,
+      "distance_km_from_brno": 1875.75,
+      "point_source": "centroid",
+      "point_lat": 40.264494,
+      "point_lon": -3.619959
+    },
+    {
+      "iso3": "LKA",
+      "name": "Sri Lanka",
+      "continent": "Asia",
+      "area_km2": 65370.39,
+      "distance_km_from_brno": 7492.02,
+      "point_source": "centroid",
+      "point_lat": 7.697614,
+      "point_lon": 80.667501
+    },
+    {
+      "iso3": "SDN",
+      "name": "Sudan",
+      "continent": "Africa",
+      "area_km2": 1850885.56,
+      "distance_km_from_brno": 3882.99,
+      "point_source": "centroid",
+      "point_lat": 15.90564,
+      "point_lon": 29.846722
+    },
+    {
+      "iso3": "SUR",
+      "name": "Suriname",
+      "continent": "South America",
+      "area_km2": 144268.72,
+      "distance_km_from_brno": 8396.63,
+      "point_source": "centroid",
+      "point_lat": 4.118102,
+      "point_lon": -55.911499
+    },
+    {
+      "iso3": "SWE",
+      "name": "Sweden",
+      "continent": "Europe",
+      "area_km2": 450581.58,
+      "distance_km_from_brno": 1445.59,
+      "point_source": "centroid",
+      "point_lat": 62.178573,
+      "point_lon": 16.349915
+    },
+    {
+      "iso3": "CHE",
+      "name": "Switzerland",
+      "continent": "Europe",
+      "area_km2": 46185.25,
+      "distance_km_from_brno": 687.45,
+      "point_source": "centroid",
+      "point_lat": 46.786057,
+      "point_lon": 8.117176
+    },
+    {
+      "iso3": "SYR",
+      "name": "Syria",
+      "continent": "Asia",
+      "area_km2": 185004.13,
+      "distance_km_from_brno": 2388.45,
+      "point_source": "centroid",
+      "point_lat": 34.987954,
+      "point_lon": 38.534324
+    },
+    {
+      "iso3": "TWN",
+      "name": "Taiwan",
+      "continent": "Asia",
+      "area_km2": 34345.7,
+      "distance_km_from_brno": 9024.36,
+      "point_source": "centroid",
+      "point_lat": 23.734065,
+      "point_lon": 120.973539
+    },
+    {
+      "iso3": "TJK",
+      "name": "Tajikistan",
+      "continent": "Asia",
+      "area_km2": 138111.76,
+      "distance_km_from_brno": 4428.49,
+      "point_source": "centroid",
+      "point_lat": 38.567736,
+      "point_lon": 71.041328
+    },
+    {
+      "iso3": "TZA",
+      "name": "Tanzania",
+      "continent": "Africa",
+      "area_km2": 932745.79,
+      "distance_km_from_brno": 6389.37,
+      "point_source": "centroid",
+      "point_lat": -6.237731,
+      "point_lon": 34.747669
+    },
+    {
+      "iso3": "THA",
+      "name": "Thailand",
+      "continent": "Asia",
+      "area_km2": 510125.57,
+      "distance_km_from_brno": 8361.13,
+      "point_source": "centroid",
+      "point_lat": 14.948595,
+      "point_lon": 101.0046
+    },
+    {
+      "iso3": "GMB",
+      "name": "The Gambia",
+      "continent": "Africa",
+      "area_km2": 14031.28,
+      "distance_km_from_brno": 4926.24,
+      "point_source": "centroid",
+      "point_lat": 13.475173,
+      "point_lon": -15.432091
+    },
+    {
+      "iso3": "TLS",
+      "name": "Timor-Leste",
+      "continent": "Asia",
+      "area_km2": 14714.93,
+      "distance_km_from_brno": 12147.18,
+      "point_source": "centroid",
+      "point_lat": -8.767523,
+      "point_lon": 125.966531
+    },
+    {
+      "iso3": "TGO",
+      "name": "Togo",
+      "continent": "Africa",
+      "area_km2": 60966.96,
+      "distance_km_from_brno": 4748.32,
+      "point_source": "centroid",
+      "point_lat": 8.432359,
+      "point_lon": 0.997139
+    },
+    {
+      "iso3": "TTO",
+      "name": "Trinidad and Tobago",
+      "continent": "North America",
+      "area_km2": 7737.81,
+      "distance_km_from_brno": 8262.01,
+      "point_source": "centroid",
+      "point_lat": 10.427976,
+      "point_lon": -61.330419
+    },
+    {
+      "iso3": "TUN",
+      "name": "Tunisia",
+      "continent": "Africa",
+      "area_km2": 156237.32,
+      "distance_km_from_brno": 1772.49,
+      "point_source": "centroid",
+      "point_lat": 34.124167,
+      "point_lon": 9.536565
+    },
+    {
+      "iso3": "TUR",
+      "name": "Turkey",
+      "continent": "Asia",
+      "area_km2": 798849.16,
+      "distance_km_from_brno": 1855.12,
+      "point_source": "centroid",
+      "point_lat": 39.025815,
+      "point_lon": 35.117436
+    },
+    {
+      "iso3": "TKM",
+      "name": "Turkmenistan",
+      "continent": "Asia",
+      "area_km2": 480809.52,
+      "distance_km_from_brno": 3546.16,
+      "point_source": "centroid",
+      "point_lat": 39.037828,
+      "point_lon": 59.310872
+    },
+    {
+      "iso3": "UGA",
+      "name": "Uganda",
+      "continent": "Africa",
+      "area_km2": 245768.48,
+      "distance_km_from_brno": 5517.22,
+      "point_source": "centroid",
+      "point_lat": 1.294341,
+      "point_lon": 32.357321
+    },
+    {
+      "iso3": "UKR",
+      "name": "Ukraine",
+      "continent": "Europe",
+      "area_km2": 572548.98,
+      "distance_km_from_brno": 1067.6,
+      "point_source": "centroid",
+      "point_lat": 49.083315,
+      "point_lon": 31.259921
+    },
+    {
+      "iso3": "ARE",
+      "name": "United Arab Emirates",
+      "continent": "Asia",
+      "area_km2": 79880.74,
+      "distance_km_from_brno": 4312.41,
+      "point_source": "centroid",
+      "point_lat": 23.86176,
+      "point_lon": 54.202703
+    },
+    {
+      "iso3": "GBR",
+      "name": "United Kingdom",
+      "continent": "Europe",
+      "area_km2": 249986.4,
+      "distance_km_from_brno": 1434.88,
+      "point_source": "centroid",
+      "point_lat": 53.735337,
+      "point_lon": -2.805429
+    },
+    {
+      "iso3": "USA",
+      "name": "United States",
+      "continent": "North America",
+      "area_km2": 9510743.74,
+      "distance_km_from_brno": 8519.99,
+      "point_source": "centroid",
+      "point_lat": 42.075008,
+      "point_lon": -107.544729
+    },
+    {
+      "iso3": "URY",
+      "name": "Uruguay",
+      "continent": "South America",
+      "area_km2": 176853.64,
+      "distance_km_from_brno": 11566.15,
+      "point_source": "centroid",
+      "point_lat": -32.759384,
+      "point_lon": -56.006575
+    },
+    {
+      "iso3": "UZB",
+      "name": "Uzbekistan",
+      "continent": "Asia",
+      "area_km2": 461410.26,
+      "distance_km_from_brno": 3685.12,
+      "point_source": "centroid",
+      "point_lat": 41.670262,
+      "point_lon": 63.284542
+    },
+    {
+      "iso3": "VUT",
+      "name": "Vanuatu",
+      "continent": "Oceania",
+      "area_km2": 7490.04,
+      "distance_km_from_brno": 15417.15,
+      "point_source": "centroid",
+      "point_lat": -15.540602,
+      "point_lon": 167.073127
+    },
+    {
+      "iso3": "VEN",
+      "name": "Venezuela",
+      "continent": "South America",
+      "area_km2": 908499.07,
+      "distance_km_from_brno": 8885.92,
+      "point_source": "centroid",
+      "point_lat": 7.143935,
+      "point_lon": -66.158607
+    },
+    {
+      "iso3": "VNM",
+      "name": "Vietnam",
+      "continent": "Asia",
+      "area_km2": 335990.8,
+      "distance_km_from_brno": 8616.57,
+      "point_source": "centroid",
+      "point_lat": 16.49849,
+      "point_lon": 106.30867
+    },
+    {
+      "iso3": "ESH",
+      "name": "Western Sahara",
+      "continent": "Africa",
+      "area_km2": 96270.6,
+      "distance_km_from_brno": 3733.19,
+      "point_source": "centroid",
+      "point_lat": 24.249281,
+      "point_lon": -12.162184
+    },
+    {
+      "iso3": "YEM",
+      "name": "Yemen",
+      "continent": "Asia",
+      "area_km2": 455915.01,
+      "distance_km_from_brno": 4633.73,
+      "point_source": "centroid",
+      "point_lat": 15.898581,
+      "point_lon": 47.524715
+    },
+    {
+      "iso3": "ZMB",
+      "name": "Zambia",
+      "continent": "Africa",
+      "area_km2": 751921.22,
+      "distance_km_from_brno": 7015.52,
+      "point_source": "centroid",
+      "point_lat": -13.363553,
+      "point_lon": 27.743706
+    },
+    {
+      "iso3": "ZWE",
+      "name": "Zimbabwe",
+      "continent": "Africa",
+      "area_km2": 376328.49,
+      "distance_km_from_brno": 7652.53,
+      "point_source": "centroid",
+      "point_lat": -18.884777,
+      "point_lon": 29.788697
+    }
+  ]
+}

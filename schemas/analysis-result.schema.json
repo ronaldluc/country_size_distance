@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/analysis-result.schema.json",
+  "title": "Analysis Result",
+  "description": "Schema for computed chart stats and regression generated from the currently filtered country set.",
+  "type": "object",
+  "required": [
+    "sample_size",
+    "pearson_r",
+    "spearman_rho",
+    "regression",
+    "x_domain_km"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "sample_size": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "pearson_r": {
+      "type": "number",
+      "minimum": -1,
+      "maximum": 1
+    },
+    "spearman_rho": {
+      "type": "number",
+      "minimum": -1,
+      "maximum": 1
+    },
+    "regression": {
+      "type": "object",
+      "required": [
+        "slope",
+        "intercept",
+        "r_squared"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "slope": {
+          "type": "number"
+        },
+        "intercept": {
+          "type": "number"
+        },
+        "r_squared": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "x_domain_km": {
+      "type": "object",
+      "required": [
+        "min",
+        "max"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "min": {
+          "type": "number",
+          "minimum": 0
+        },
+        "max": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "regression_line_points": {
+      "type": "array",
+      "description": "Optional points for drawing the fitted line.",
+      "items": {
+        "type": "object",
+        "required": [
+          "x_distance_km",
+          "y_area_km2"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "x_distance_km": {
+            "type": "number",
+            "minimum": 0
+          },
+          "y_area_km2": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        }
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "description": "Non-fatal notes such as insufficient sample size for stable correlation.",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "country-size-distance",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "22.14.0"
+  },
+  "scripts": {
+    "build:dataset": "UV_CACHE_DIR=.uv-cache UV_PYTHON_INSTALL_DIR=.uv-python uv run python scripts/build_dataset.py",
+    "validate:dataset": "node scripts/validate_dataset.mjs",
+    "refresh:data": "npm run build:dataset && npm run validate:dataset",
+    "dev": "node scripts/dev_all.mjs",
+    "dev:frontend": "vite",
+    "dev:backend": "node scripts/watch_backend.mjs",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test:ts": "vitest run",
+    "test:py": "UV_CACHE_DIR=.uv-cache UV_PYTHON_INSTALL_DIR=.uv-python uv run pytest -q",
+    "test": "npm run test:ts && npm run test:py"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "plotly.js": "^3.3.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-plotly.js": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.4",
+    "typescript": "^5.9.2",
+    "vite": "^7.3.1",
+    "vitest": "^4.0.18"
+  }
+}
