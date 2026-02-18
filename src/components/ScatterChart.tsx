@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { Plot, Plotly } from "./PlotlyClient.js";
 import { CONTINENT_COLORS } from "../domain/continentColors.js";
+import { populationToBubbleSize } from "../domain/populationScaling.js";
 
 import type { AnalysisResult, AxisMode, Continent, CountryDatasetRow } from "../types/contracts.js";
 
@@ -31,22 +32,30 @@ export const ScatterChart = ({ rows, analysis, axisMode }: Props): JSX.Element =
     if (continentRows.length === 0) {
       return null;
     }
-    return {
-      x: continentRows.map((r) => r.distance_km_from_brno),
-      y: continentRows.map((r) => r.area_km2),
-      mode: "markers",
-      type: "scatter",
-      name: continent,
-      legendgroup: continent,
-      customdata: continentRows.map((r) => [r.name, r.iso3, r.continent, r.point_source]),
+      return {
+        x: continentRows.map((r) => r.distance_km_from_brno),
+        y: continentRows.map((r) => r.area_km2),
+        mode: "markers",
+        type: "scatter",
+        name: continent,
+        legendgroup: continent,
+        customdata: continentRows.map((r) => [
+          r.name,
+          r.iso3,
+          r.continent,
+          r.population,
+          r.point_source
+        ]),
       hovertemplate:
         "<b>%{customdata[0]}</b> (%{customdata[1]})<br>" +
         "Continent: %{customdata[2]}<br>" +
+        "Population: %{customdata[3]:,.0f}<br>" +
         "Distance from Brno: %{x:.1f} km<br>" +
         "Area: %{y:.0f} km²<br>" +
-        "Point source: %{customdata[3]}<extra></extra>",
-      marker: {
-        size: 9,
+        "Point source: %{customdata[4]}<extra></extra>",
+        marker: {
+          size: continentRows.map((r) => populationToBubbleSize(r.population)),
+          sizemode: "diameter" as const,
         color: CONTINENT_COLORS[continent],
         opacity: 0.86,
         line: {
