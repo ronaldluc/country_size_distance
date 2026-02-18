@@ -1,8 +1,9 @@
 import { useState } from "react";
 
 import { Plot, Plotly } from "./PlotlyClient.js";
+import { CONTINENT_COLORS } from "../domain/continentColors.js";
 
-import type { AnalysisResult, AxisMode, CountryDatasetRow } from "../types/contracts.js";
+import type { AnalysisResult, AxisMode, Continent, CountryDatasetRow } from "../types/contracts.js";
 
 interface Props {
   rows: CountryDatasetRow[];
@@ -25,25 +26,40 @@ export const ScatterChart = ({ rows, analysis, axisMode }: Props): JSX.Element =
     });
   };
 
-  const scatterTrace = {
-    x: rows.map((r) => r.distance_km_from_brno),
-    y: rows.map((r) => r.area_km2),
-    mode: "markers",
-    type: "scatter",
-    name: "Countries",
-    customdata: rows.map((r) => [r.name, r.iso3, r.continent, r.point_source]),
-    hovertemplate:
-      "<b>%{customdata[0]}</b> (%{customdata[1]})<br>" +
-      "Continent: %{customdata[2]}<br>" +
-      "Distance from Brno: %{x:.1f} km<br>" +
-      "Area: %{y:.0f} km²<br>" +
-      "Point source: %{customdata[3]}<extra></extra>",
-    marker: {
-      size: 9,
-      color: "#0fba9b",
-      opacity: 0.82
+  const makeScatterTrace = (continent: Continent) => {
+    const continentRows = rows.filter((r) => r.continent === continent);
+    if (continentRows.length === 0) {
+      return null;
     }
+    return {
+      x: continentRows.map((r) => r.distance_km_from_brno),
+      y: continentRows.map((r) => r.area_km2),
+      mode: "markers",
+      type: "scatter",
+      name: continent,
+      legendgroup: continent,
+      customdata: continentRows.map((r) => [r.name, r.iso3, r.continent, r.point_source]),
+      hovertemplate:
+        "<b>%{customdata[0]}</b> (%{customdata[1]})<br>" +
+        "Continent: %{customdata[2]}<br>" +
+        "Distance from Brno: %{x:.1f} km<br>" +
+        "Area: %{y:.0f} km²<br>" +
+        "Point source: %{customdata[3]}<extra></extra>",
+      marker: {
+        size: 9,
+        color: CONTINENT_COLORS[continent],
+        opacity: 0.86,
+        line: {
+          color: "rgba(8, 15, 26, 0.45)",
+          width: 0.6
+        }
+      }
+    };
   };
+
+  const continentTraces = (Object.keys(CONTINENT_COLORS) as Continent[])
+    .map((continent) => makeScatterTrace(continent))
+    .filter((trace): trace is NonNullable<ReturnType<typeof makeScatterTrace>> => trace !== null);
 
   const regressionTrace = {
     x: analysis.regression_line_points?.map((p) => p.x_distance_km) ?? [],
@@ -119,7 +135,7 @@ export const ScatterChart = ({ rows, analysis, axisMode }: Props): JSX.Element =
       </div>
       <Plot
         data={[
-          scatterTrace,
+          ...continentTraces,
           band2LowerTrace,
           band2UpperTrace,
           band1LowerTrace,

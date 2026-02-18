@@ -1,5 +1,6 @@
-import { useMemo, useState } from "react";
+import { type CSSProperties, useMemo, useState } from "react";
 
+import { CONTINENT_COLORS } from "../domain/continentColors.js";
 import { CONTINENTS, type CountryDatasetRow, type FilterState } from "../types/contracts.js";
 
 interface Props {
@@ -125,9 +126,11 @@ export const FilterPanel = ({ filterState, countries, onChange, onReset }: Props
               <button
                 key={continent}
                 type="button"
-                className={active ? "chip chip-on" : "chip"}
+                className={active ? "chip continent-chip chip-on" : "chip continent-chip"}
+                style={{ "--continent-color": CONTINENT_COLORS[continent] } as CSSProperties}
                 onClick={() => toggleContinent(continent)}
               >
+                <span className="chip-swatch" />
                 {continent}
               </button>
             );

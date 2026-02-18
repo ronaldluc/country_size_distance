@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Sora:wght@700;800&family=Manrope:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Manrope:wght@400;500;700&display=swap");
 
 :root {
   --bg-top: #f9f6ef;
@@ -85,7 +85,7 @@ body::before {
 .masthead h1 {
   margin: 0;
   max-width: 14ch;
-  font-family: "Sora", "Syne", sans-serif;
+  font-family: "Syne", sans-serif;
   font-weight: 800;
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1;
@@ -214,6 +214,9 @@ input[type="range"] {
   cursor: pointer;
   font-size: 0.75rem;
   font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
 }
 
 .chip-on {
@@ -224,6 +227,36 @@ input[type="range"] {
 
 .chip:hover {
   transform: translateY(-1px);
+}
+
+.continent-chip {
+  --continent-color: #6a8bb5;
+  border-color: color-mix(in oklab, var(--continent-color) 66%, #ffffff 34%);
+  background: color-mix(in oklab, var(--continent-color) 16%, #ffffff 84%);
+  color: #122746;
+}
+
+.continent-chip.chip-on {
+  background: linear-gradient(
+    130deg,
+    color-mix(in oklab, var(--continent-color) 82%, #0f1f34 18%) 0%,
+    #13233f 100%
+  );
+  border-color: color-mix(in oklab, var(--continent-color) 88%, #102136 12%);
+  color: #fff;
+}
+
+.chip-swatch {
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 999px;
+  background: var(--continent-color);
+  border: 1px solid rgba(19, 35, 63, 0.25);
+  flex-shrink: 0;
+}
+
+.continent-chip.chip-on .chip-swatch {
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .stats-grid {
