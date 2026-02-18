@@ -45,6 +45,7 @@ export const App = (): JSX.Element => {
   return (
     <main className="layout">
       <header className="masthead">
+        <p className="kicker">Atlas Signal / Brno Geo Correlation</p>
         <div className="masthead-top">
           <h1>Country Size vs Distance from Brno</h1>
           <div className="row-actions">
@@ -56,6 +57,10 @@ export const App = (): JSX.Element => {
             </button>
           </div>
         </div>
+        <p>
+          A rigorous scientific investigation into whether <strong>Brno is the center of Earth</strong>,
+          and countries simply get larger the farther they are because map devs ran out of time near Brno.
+        </p>
         <p>
           X/Y graph of <strong>distance from Brno (km)</strong> and <strong>country area (km²)</strong>.
           Country point uses centroid with capital fallback.

@@ -39,9 +39,9 @@ export const ScatterChart = ({ rows, analysis, axisMode }: Props): JSX.Element =
       "Area: %{y:.0f} km²<br>" +
       "Point source: %{customdata[3]}<extra></extra>",
     marker: {
-      size: 8,
-      color: "#0b5fff",
-      opacity: 0.8
+      size: 9,
+      color: "#0fba9b",
+      opacity: 0.82
     }
   };
 
@@ -52,10 +52,56 @@ export const ScatterChart = ({ rows, analysis, axisMode }: Props): JSX.Element =
     type: "scatter",
     name: "Regression",
     line: {
-      color: "#ef233c",
+      color: "#ff6b35",
       width: 3
     },
     hovertemplate: "Regression line<extra></extra>"
+  };
+
+  const band2LowerTrace = {
+    x: analysis.regression_band_2sigma_points?.map((p) => p.x_distance_km) ?? [],
+    y: analysis.regression_band_2sigma_points?.map((p) => p.y_lower_km2) ?? [],
+    mode: "lines",
+    type: "scatter",
+    name: "Regression -2\u03c3",
+    line: { color: "rgba(239,35,60,0)", width: 0 },
+    hoverinfo: "skip",
+    showlegend: false
+  };
+
+  const band2UpperTrace = {
+    x: analysis.regression_band_2sigma_points?.map((p) => p.x_distance_km) ?? [],
+    y: analysis.regression_band_2sigma_points?.map((p) => p.y_upper_km2) ?? [],
+    mode: "lines",
+    type: "scatter",
+    name: "Regression \u00b12\u03c3",
+    line: { color: "rgba(255,107,53,0.28)", width: 1 },
+    fill: "tonexty" as const,
+    fillcolor: "rgba(255,107,53,0.09)",
+    hovertemplate: "Regression band: \u00b12\u03c3<extra></extra>"
+  };
+
+  const band1LowerTrace = {
+    x: analysis.regression_band_1sigma_points?.map((p) => p.x_distance_km) ?? [],
+    y: analysis.regression_band_1sigma_points?.map((p) => p.y_lower_km2) ?? [],
+    mode: "lines",
+    type: "scatter",
+    name: "Regression -1\u03c3",
+    line: { color: "rgba(239,35,60,0)", width: 0 },
+    hoverinfo: "skip",
+    showlegend: false
+  };
+
+  const band1UpperTrace = {
+    x: analysis.regression_band_1sigma_points?.map((p) => p.x_distance_km) ?? [],
+    y: analysis.regression_band_1sigma_points?.map((p) => p.y_upper_km2) ?? [],
+    mode: "lines",
+    type: "scatter",
+    name: "Regression \u00b11\u03c3",
+    line: { color: "rgba(255,107,53,0.55)", width: 1 },
+    fill: "tonexty" as const,
+    fillcolor: "rgba(255,107,53,0.18)",
+    hovertemplate: "Regression band: \u00b11\u03c3<extra></extra>"
   };
 
   return (
@@ -72,34 +118,49 @@ export const ScatterChart = ({ rows, analysis, axisMode }: Props): JSX.Element =
         </div>
       </div>
       <Plot
-        data={[scatterTrace, regressionTrace]}
+        data={[
+          scatterTrace,
+          band2LowerTrace,
+          band2UpperTrace,
+          band1LowerTrace,
+          band1UpperTrace,
+          regressionTrace
+        ]}
         layout={{
           autosize: true,
           dragmode: "pan",
-          paper_bgcolor: "transparent",
-          plot_bgcolor: "#f7fafc",
-          margin: { l: 70, r: 20, t: 20, b: 70 },
+          paper_bgcolor: "#0f1f34",
+          plot_bgcolor: "#0f1f34",
+          margin: { l: 96, r: 20, t: 20, b: 74 },
           xaxis: {
-            title: { text: "Distance from Brno (km)" },
+            title: { text: "Distance from Brno (km)", standoff: 14 },
             type: axisMode === "log" ? "log" : "linear",
-            gridcolor: "#d9e2ec"
+            gridcolor: "#2d4061",
+            color: "#c8d7ef",
+            zerolinecolor: "#3e5b86"
           },
           yaxis: {
-            title: { text: "Country area (km²)" },
+            title: { text: "Country area (km²)", standoff: 14 },
             type: axisMode === "log" ? "log" : "linear",
-            gridcolor: "#d9e2ec"
+            gridcolor: "#2d4061",
+            color: "#c8d7ef",
+            zerolinecolor: "#3e5b86"
           },
           legend: {
             orientation: "h",
             x: 0,
-            y: 1.1
+            y: 1.1,
+            font: { color: "#d7e6ff", size: 13 },
+            bgcolor: "rgba(12, 26, 45, 0.76)",
+            bordercolor: "rgba(124, 163, 217, 0.35)",
+            borderwidth: 1
           }
         }}
         useResizeHandler
         onInitialized={(_, gd) => setGraphDiv(gd)}
         onUpdate={(_, gd) => setGraphDiv(gd)}
         style={{ width: "100%", height: "68vh" }}
-        config={{ responsive: true, displaylogo: false }}
+        config={{ responsive: true, displaylogo: false, displayModeBar: false }}
       />
     </section>
   );

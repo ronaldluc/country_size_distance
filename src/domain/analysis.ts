@@ -1,6 +1,7 @@
 import type {
   AnalysisResult,
   CountryDatasetRow,
+  RegressionBandPoint,
   RegressionLinePoint
 } from "../types/contracts.js";
 
@@ -44,7 +45,10 @@ const rank = (values: number[]): number[] => {
   return ranks;
 };
 
-const linearRegression = (x: number[], y: number[]): { slope: number; intercept: number; r2: number } => {
+const linearRegression = (
+  x: number[],
+  y: number[]
+): { slope: number; intercept: number; r2: number; residuals: number[] } => {
   const mx = mean(x);
   const my = mean(y);
   let numerator = 0;
@@ -57,27 +61,68 @@ const linearRegression = (x: number[], y: number[]): { slope: number; intercept:
   }
 
   if (denominator === 0) {
-    return { slope: 0, intercept: my, r2: 0 };
+    const residuals = y.map((yi) => yi - my);
+    return { slope: 0, intercept: my, r2: 0, residuals };
   }
 
   const slope = numerator / denominator;
   const intercept = my - slope * mx;
   const yPred = x.map((xi) => slope * xi + intercept);
+  const residuals = y.map((yi, i) => yi - yPred[i]!);
   const ssRes = y.reduce((acc, yi, i) => acc + (yi - yPred[i]!) ** 2, 0);
   const ssTot = y.reduce((acc, yi) => acc + (yi - my) ** 2, 0);
   const r2 = ssTot === 0 ? 0 : 1 - ssRes / ssTot;
-  return { slope, intercept, r2: Math.max(0, Math.min(1, r2)) };
+  return { slope, intercept, r2: Math.max(0, Math.min(1, r2)), residuals };
 };
 
 const buildRegressionLine = (
   xMin: number,
   xMax: number,
   slope: number,
-  intercept: number
-): RegressionLinePoint[] => [
-  { x_distance_km: xMin, y_area_km2: slope * xMin + intercept },
-  { x_distance_km: xMax, y_area_km2: slope * xMax + intercept }
-];
+  intercept: number,
+  points = 80
+): RegressionLinePoint[] => {
+  const minLogX = Math.log(xMin);
+  const maxLogX = Math.log(xMax);
+  const rows: RegressionLinePoint[] = [];
+  for (let i = 0; i < points; i += 1) {
+    const t = points === 1 ? 0 : i / (points - 1);
+    const logX = minLogX + (maxLogX - minLogX) * t;
+    const x = Math.exp(logX);
+    rows.push({
+      x_distance_km: x,
+      y_area_km2: Math.exp(intercept + slope * logX)
+    });
+  }
+  return rows;
+};
+
+const buildRegressionBand = (
+  xMin: number,
+  xMax: number,
+  slope: number,
+  intercept: number,
+  sigma: number,
+  sigmaLevel: 1 | 2,
+  points = 80
+): RegressionBandPoint[] => {
+  const minLogX = Math.log(xMin);
+  const maxLogX = Math.log(xMax);
+  const rows: RegressionBandPoint[] = [];
+  for (let i = 0; i < points; i += 1) {
+    const t = points === 1 ? 0 : i / (points - 1);
+    const logX = minLogX + (maxLogX - minLogX) * t;
+    const x = Math.exp(logX);
+    const meanLogY = intercept + slope * logX;
+    const delta = sigmaLevel * sigma;
+    rows.push({
+      x_distance_km: x,
+      y_lower_km2: Math.exp(meanLogY - delta),
+      y_upper_km2: Math.exp(meanLogY + delta)
+    });
+  }
+  return rows;
+};
 
 export const analyzeRows = (rows: CountryDatasetRow[]): AnalysisResult => {
   if (rows.length === 0) {
@@ -85,36 +130,74 @@ export const analyzeRows = (rows: CountryDatasetRow[]): AnalysisResult => {
       sample_size: 0,
       pearson_r: 0,
       spearman_rho: 0,
-      regression: { slope: 0, intercept: 0, r_squared: 0 },
+      regression: { model: "log_log_power_law", slope: 0, intercept: 0, sigma_log: 0, r_squared: 0 },
       x_domain_km: { min: 0, max: 0 },
       warnings: ["No countries match current filter settings."]
     };
   }
 
-  const x = rows.map((r) => r.distance_km_from_brno);
-  const y = rows.map((r) => r.area_km2);
+  const positiveRows = rows.filter((r) => r.distance_km_from_brno > 0 && r.area_km2 > 0);
+  if (positiveRows.length === 0) {
+    return {
+      sample_size: rows.length,
+      pearson_r: 0,
+      spearman_rho: 0,
+      regression: { model: "log_log_power_law", slope: 0, intercept: 0, sigma_log: 0, r_squared: 0 },
+      x_domain_km: { min: 0, max: 0 },
+      warnings: ["No positive values available for log-log regression."]
+    };
+  }
+
+  const x = positiveRows.map((r) => r.distance_km_from_brno);
+  const y = positiveRows.map((r) => r.area_km2);
   const xMin = Math.min(...x);
   const xMax = Math.max(...x);
   const p = pearson(x, y);
   const s = pearson(rank(x), rank(y));
-  const reg = linearRegression(x, y);
+  const logX = x.map((v) => Math.log(v));
+  const logY = y.map((v) => Math.log(v));
+  const reg = linearRegression(logX, logY);
+
+  const dof = Math.max(1, logX.length - 2);
+  const sigmaLog = Math.sqrt(reg.residuals.reduce((acc, r) => acc + r ** 2, 0) / dof);
 
   const warnings: string[] = [];
   if (rows.length < 8) {
     warnings.push("Small sample size; correlation estimates may be unstable.");
   }
+  if (positiveRows.length !== rows.length) {
+    warnings.push("Some non-positive points were excluded from log-log regression.");
+  }
 
   return {
-    sample_size: rows.length,
+    sample_size: positiveRows.length,
     pearson_r: p,
     spearman_rho: s,
     regression: {
+      model: "log_log_power_law",
       slope: reg.slope,
       intercept: reg.intercept,
+      sigma_log: sigmaLog,
       r_squared: reg.r2
     },
     x_domain_km: { min: xMin, max: xMax },
     regression_line_points: buildRegressionLine(xMin, xMax, reg.slope, reg.intercept),
+    regression_band_1sigma_points: buildRegressionBand(
+      xMin,
+      xMax,
+      reg.slope,
+      reg.intercept,
+      sigmaLog,
+      1
+    ),
+    regression_band_2sigma_points: buildRegressionBand(
+      xMin,
+      xMax,
+      reg.slope,
+      reg.intercept,
+      sigmaLog,
+      2
+    ),
     warnings
   };
 };

@@ -53,14 +53,22 @@ export interface FilterState {
 }
 
 export interface RegressionStats {
+  model: "log_log_power_law";
   slope: number;
   intercept: number;
+  sigma_log: number;
   r_squared: number;
 }
 
 export interface RegressionLinePoint {
   x_distance_km: number;
   y_area_km2: number;
+}
+
+export interface RegressionBandPoint {
+  x_distance_km: number;
+  y_lower_km2: number;
+  y_upper_km2: number;
 }
 
 export interface AnalysisResult {
@@ -73,5 +81,7 @@ export interface AnalysisResult {
     max: number;
   };
   regression_line_points?: RegressionLinePoint[];
+  regression_band_1sigma_points?: RegressionBandPoint[];
+  regression_band_2sigma_points?: RegressionBandPoint[];
   warnings?: string[];
 }

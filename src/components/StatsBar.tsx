@@ -27,12 +27,16 @@ export const StatsBar = ({ result }: Props): JSX.Element => (
         <strong>{n(result.regression.r_squared)}</strong>
       </div>
       <div>
-        <span className="label">Slope</span>
+        <span className="label">Log-log slope (b)</span>
         <strong>{n(result.regression.slope)}</strong>
       </div>
       <div>
-        <span className="label">Intercept</span>
+        <span className="label">Log intercept (ln a)</span>
         <strong>{n(result.regression.intercept)}</strong>
+      </div>
+      <div>
+        <span className="label">Log residual σ</span>
+        <strong>{n(result.regression.sigma_log)}</strong>
       </div>
     </div>
     {result.warnings && result.warnings.length > 0 && (

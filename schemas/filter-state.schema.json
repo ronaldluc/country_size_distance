@@ -52,7 +52,7 @@
       "type": "number",
       "minimum": 0,
       "maximum": 1,
-      "description": "Used only when outlier_mode=percentile."
+      "description": "Used only when outlier_mode=percentile; keeps this central fraction in log-log residual space."
     },
     "excluded_iso3": {
       "type": "array",

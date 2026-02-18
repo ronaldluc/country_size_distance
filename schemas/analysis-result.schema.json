@@ -30,17 +30,27 @@
     "regression": {
       "type": "object",
       "required": [
+        "model",
         "slope",
         "intercept",
+        "sigma_log",
         "r_squared"
       ],
       "additionalProperties": false,
       "properties": {
+        "model": {
+          "type": "string",
+          "const": "log_log_power_law"
+        },
         "slope": {
           "type": "number"
         },
         "intercept": {
           "type": "number"
+        },
+        "sigma_log": {
+          "type": "number",
+          "minimum": 0
         },
         "r_squared": {
           "type": "number",
@@ -83,6 +93,60 @@
             "minimum": 0
           },
           "y_area_km2": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        }
+      }
+    },
+    "regression_band_1sigma_points": {
+      "type": "array",
+      "description": "Optional points for drawing the +/- 1 sigma prediction envelope in log space.",
+      "items": {
+        "type": "object",
+        "required": [
+          "x_distance_km",
+          "y_lower_km2",
+          "y_upper_km2"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "x_distance_km": {
+            "type": "number",
+            "minimum": 0
+          },
+          "y_lower_km2": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "y_upper_km2": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        }
+      }
+    },
+    "regression_band_2sigma_points": {
+      "type": "array",
+      "description": "Optional points for drawing the +/- 2 sigma prediction envelope in log space.",
+      "items": {
+        "type": "object",
+        "required": [
+          "x_distance_km",
+          "y_lower_km2",
+          "y_upper_km2"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "x_distance_km": {
+            "type": "number",
+            "minimum": 0
+          },
+          "y_lower_km2": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "y_upper_km2": {
             "type": "number",
             "exclusiveMinimum": 0
           }

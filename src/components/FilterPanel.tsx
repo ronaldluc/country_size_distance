@@ -89,7 +89,7 @@ export const FilterPanel = ({ filterState, countries, onChange, onReset }: Props
       {filterState.outlier_mode === "percentile" && (
         <div className="field-group">
           <label htmlFor="outlier_percentile_threshold">
-            Percentile threshold ({Math.round((filterState.outlier_percentile_threshold ?? 0.95) * 100)}%)
+            Central coverage ({Math.round((filterState.outlier_percentile_threshold ?? 0.95) * 100)}%)
           </label>
           <input
             id="outlier_percentile_threshold"
